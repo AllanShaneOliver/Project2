@@ -74,3 +74,10 @@ L3: blt $t1, $t6, EL #test the next condition if this falls through
     mul $s4, $s7, $s3
     add $s4, $s4, $zero
     j FN
+
+EL: li $v0, 4
+    la $a0, invalid
+    syscall
+    j endfunct
+FN: j loop
+
