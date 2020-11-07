@@ -27,3 +27,18 @@ li $s3, 0 #result variable
 li $s4, 0 #variable which will print the final result
 li $t3, -1 #obtains length of string
 li $t2, 4 #print invalid input if string length > 4
+
+length:
+  lb $t0, ($a0)
+  beq $t0, $0, begin
+  addi $t3, $t3, 1 #increment length
+  addi $a0, $a0, 1
+  bgt $t3, $t2, EL
+j length
+
+begin:
+  move $s0, $t3
+  li $s5, 1 #used to square, cube, etc 29
+  li $s6, 29 #base
+  li $s7, 0 #product of 29 * 1
+  la $a0, list
