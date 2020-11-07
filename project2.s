@@ -42,3 +42,10 @@ begin:
   li $s6, 29 #base
   li $s7, 0 #product of 29 * 1
   la $a0, list
+
+loop:
+    lb $t1, ($a0)
+    addi $s0, $s0, -1
+    beq $s0, $zero, afterloop #jump to afterloop after 10th character is reached
+    addi $a0, $a0, 1 #add 1 after each iteration, i++;
+    mul $s7, $s6, $s5
