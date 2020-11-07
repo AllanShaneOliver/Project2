@@ -19,3 +19,8 @@ syscall
 conversion:
 
 li $s1, '0' #character 0
+li $s2, '9' #character 9
+li $t4, 'a' #character a - lower boundary for base 29
+li $t5, 's' #character s - upper boundary for base 29
+li $t6, 'A' #character A - lower boundary for base 29
+li $t7, 'S' #character S - upper boundary for base 29
