@@ -49,3 +49,10 @@ loop:
     beq $s0, $zero, afterloop #jump to afterloop after 10th character is reached
     addi $a0, $a0, 1 #add 1 after each iteration, i++;
     mul $s7, $s6, $s5
+
+L1: blt $t1, $s1, L2 #test the next condition if this falls through
+    bgt $t1, $s2, L2 #move to L2 if this isn't true
+    addi $s3, $t1, -48 #subtract 48, place result into $s3
+    add $s3, $s3, $zero
+    mul $s7, $s6, $s5
+
