@@ -64,3 +64,13 @@ L2: blt $t1, $t4, L3 #test the next condition if this falls through
     addi $s3, $t1, -87 #subtract 87, place result into $s3
     add $s3, $s3, $zero
     mul $s7, $s6, $s5
+
+L3: blt $t1, $t6, EL #test the next condition if this falls through
+    bgt $t1, $t7, EL #move to ELSE if this isn't true
+    addi $s3, $t1, -55 #subtract 55, place result into $s3
+    add $s3, $s3, $zero
+    mul $s7, $s6, $s5
+ 
+    mul $s4, $s7, $s3
+    add $s4, $s4, $zero
+    j FN
