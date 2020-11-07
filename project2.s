@@ -81,3 +81,10 @@ EL: li $v0, 4
     j endfunct
 FN: j loop
 
+afterloop:
+  li $v0, 1
+  move $a0, $s4 #print contents of s4 register
+  syscall
+endfunct:
+  jr $ra #exit function, return to caller
+
