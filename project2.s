@@ -59,3 +59,8 @@ L1: blt $t1, $s1, L2 #test the next condition if this falls through
    add $s4, $s4, $zero
    j FN
 
+L2: blt $t1, $t4, L3 #test the next condition if this falls through
+    bgt $t1, $t5, L3 #move to L3 if this isn't true
+    addi $s3, $t1, -87 #subtract 87, place result into $s3
+    add $s3, $s3, $zero
+    mul $s7, $s6, $s5
